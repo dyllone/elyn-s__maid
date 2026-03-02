@@ -103,62 +103,51 @@ table button:hover {
 }
 
 @media screen and (max-width: 768px) {
-    /* 1. 사이드 메뉴: 가로 스크롤 영역 최적화 */
+    /* 1. 레이아웃: 세로 정렬 강제 */
+    .main-layout {
+        display: block !important; /* flex 해제 */
+        padding: 0 15px !important;
+    }
+
+    /* 2. 사이드 메뉴 버튼: 절대 안 깨지는 가로 스크롤 */
     .side-menu {
-        display: flex !important;
-        flex-direction: row !important; 
-        overflow-x: auto !important; /* 가로 스크롤 허용 */
-        white-space: nowrap !important; /* 줄바꿈 금지 */
-        gap: 10px !important;
-        padding: 10px 15px !important; /* 양옆 여백 주어 잘림 방지 */
-        margin-bottom: 20px !important;
-        -webkit-overflow-scrolling: touch; /* 아이폰 부드러운 스크롤 */
-        scrollbar-width: none; /* 스크롤바 숨기기 */
+        display: block !important; /* 박스 모델 변경 */
+        white-space: nowrap !important; /* 내부 요소 줄바꿈 절대 금지 */
+        overflow-x: auto !important; /* 가로 스크롤 활성화 */
+        padding: 15px 0 !important;
+        margin-bottom: 10px !important;
+        -webkit-overflow-scrolling: touch;
     }
-    .side-menu::-webkit-scrollbar { display: none; }
 
-    /* 2. 메뉴 버튼: 칩(Chip) 스타일로 보정 */
     .menu-btn {
-        flex: 0 0 auto !important; /* 글자 길이에 맞춰 크기 자동 조절 */
+        display: inline-block !important; /* 가로로 흐르게 설정 */
         width: auto !important; /* 너비 고정 해제 */
-        padding: 12px 20px !important; /* 안쪽 여백 넉넉히 */
+        margin-right: 8px !important; /* 버튼 사이 간격 */
+        padding: 10px 18px !important;
         font-size: 13px !important;
-        border-radius: 50px !important; /* 둥근 캡슐 모양 */
-        text-align: center !important;
-        background: #f0f0f0 !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
-        transform: none !important; /* 호버 효과 제거 (모바일) */
+        border-radius: 20px !important;
+        background: #eee !important;
+        vertical-align: middle !important;
     }
 
-    .menu-btn:hover {
-        transform: none !important; /* 모바일에서 옆으로 밀리는 현상 방지 */
-    }
-
-    /* 3. 상품 카드 가로 스크롤 (유지 및 보정) */
+    /* 3. 상품 그리드: 가로 스크롤 최적화 */
     .product-grid {
         display: flex !important;
-        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* 한 줄로 강제 */
         overflow-x: auto !important;
         gap: 15px !important;
-        padding: 10px 20px !important;
-        scrollbar-width: none;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch;
     }
-    .product-grid::-webkit-scrollbar { display: none; }
 
     .product-card {
-        flex: 0 0 250px !important; /* 카드의 가로 크기 고정 */
-        max-width: 250px !important;
+        flex: 0 0 240px !important; /* 카드 너비 고정 */
+        min-width: 240px !important;
+    }
+
+    /* 4. 배너 텍스트 겹침 방지 */
+    .hero-content h2 {
+        font-size: 1rem !important;
+        word-break: keep-all !important; /* 단어 단위 줄바꿈 */
     }
 }
-
-    .product-card {
-        flex: 0 0 70%; /* 화면 너비의 70% 정도 차지 (옆 카드가 살짝 보이게) */
-        scroll-snap-align: center;
-        margin-bottom: 0 !important; /* 아래 여백 제거 */
-    }
-
-    .product-card img {
-        height: 200px !important; /* 가로형일 때 너무 길지 않게 조절 */
-    }
-}
-
