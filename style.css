@@ -99,4 +99,17 @@ table button {
 table button:hover {
     color: #ffb6c1 !important; /* 배너와 같은 핑크색 */
     background: transparent !important;
+
+}
+
+/* 모바일용 스타일 */
+@media (max-width: 768px) {
+  .hero-section {
+    font-size: 1.5rem; /* 글자 크기 축소 */
+    padding: 20px;
+  }
+  
+  .card {
+    width: 100%; /* 카드를 한 줄에 하나씩 꽉 차게 */
+  }
 }
