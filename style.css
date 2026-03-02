@@ -104,12 +104,8 @@ table button:hover {
 
 /* 모바일용 스타일 */
 @media (max-width: 768px) {
-  .hero-section {
-    font-size: 1.5rem; /* 글자 크기 축소 */
-    padding: 20px;
-  }
-  
-  .card {
-    width: 100%; /* 카드를 한 줄에 하나씩 꽉 차게 */
+  .main-wrapper .hero-section {
+    font-size: 1.5rem;
   }
 }
+
