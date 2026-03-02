@@ -102,50 +102,49 @@ table button:hover {
 
 }
 
-/* ------------------------------------------------
-/* 모바일용 스타일 (768px 이하) */
-@media (max-width: 768px) {
-  /* 1. 배경 배너 크기 조정 */
-  .brand-hero {
-    height: 180px !important; /* 높이를 줄임 */
-    margin: 20px 10px !important;
-  }
+@media screen and (max-width: 768px) {
+    /* 1. 배너 글자 크기 조정 */
+    .hero-content h2 {
+        font-size: 1.1rem !important; /* 텍스트가 박스 밖으로 안 나가게 조절 */
+        line-height: 1.5;
+        white-space: nowrap; /* 줄바꿈 방지하고 싶을 때 사용 */
+    }
 
-  /* 2. 메인 텍스트 크기 조정 (여기가 포인트!) */
-  .hero-content h2 {
-    font-size: 1.2rem !important; /* 글자 크기 축소 */
-    line-height: 1.4;
-  }
+    /* 2. 상단 버튼들: 글자 크기 줄이고 한 줄에 정렬 */
+    .side-menu {
+        display: flex !important;
+        flex-direction: row !important; /* 가로 정렬 */
+        overflow-x: auto; /* 버튼이 많으면 옆으로 밀어서 보기 */
+        gap: 8px;
+        padding: 10px 0;
+        scrollbar-width: none; /* 파이어폭스 스크롤바 숨김 */
+    }
+    .side-menu::-webkit-scrollbar { display: none; } /* 크롬 스크롤바 숨김 */
 
-  /* 3. 사이드바와 콘텐츠를 가로가 아닌 세로로 배치 */
-  .main-layout {
-    flex-direction: column !important;
-  }
+    .menu-btn {
+        flex: 0 0 auto; /* 크기 고정 */
+        padding: 10px 15px !important;
+        font-size: 12px !important; /* 글자 크기 축소 */
+        white-space: nowrap; /* 글자가 아래로 떨어지지 않게 */
+    }
 
-  .side-menu {
-    width: 100% !important;
-    position: static !important; /* 고정 해제 */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 버튼 3개를 가로로 꽉 차게 */
-    gap: 5px;
-    margin-bottom: 20px;
-  }
+    /* 3. 하자품 리스트: 가로 스크롤형으로 변경 (핵심!) */
+    .product-grid {
+        display: flex !important;
+        flex-direction: row !important; /* 가로로 배치 */
+        overflow-x: auto; /* 옆으로 밀어서 보기 */
+        gap: 15px;
+        padding: 10px 5px 20px 5px;
+        scroll-snap-type: x mandatory; /* 스크롤 시 딱딱 걸리는 효과 */
+    }
 
-  .menu-btn {
-    padding: 10px 5px !important;
-    font-size: 11px !important;
-    text-align: center !important;
-  }
+    .product-card {
+        flex: 0 0 70%; /* 화면 너비의 70% 정도 차지 (옆 카드가 살짝 보이게) */
+        scroll-snap-align: center;
+        margin-bottom: 0 !important; /* 아래 여백 제거 */
+    }
 
-  /* 4. 하자품 리스트 한 줄에 하나씩 */
-  .product-grid {
-    flex-direction: column !important;
-  }
-  
-  .product-card {
-    width: 100% !important;
-    margin-bottom: 15px;
-  }
+    .product-card img {
+        height: 200px !important; /* 가로형일 때 너무 길지 않게 조절 */
+    }
 }
-
-
