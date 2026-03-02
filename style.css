@@ -103,70 +103,49 @@ table button:hover {
 }
 
 /* ------------------------------------------------
-   모바일 최적화 (화면 너비 768px 이하)
-   ------------------------------------------------ */
-@media screen and (max-width: 768px) {
-    /* 1. 헤더: 검색창 숨기거나 크기 조절 */
-    .search-bar { display: none; } /* 모바일에서 너무 좁으면 일단 숨깁니다 */
-    .main-header { padding: 15px 20px; }
+/* 모바일용 스타일 (768px 이하) */
+@media (max-width: 768px) {
+  /* 1. 배경 배너 크기 조정 */
+  .brand-hero {
+    height: 180px !important; /* 높이를 줄임 */
+    margin: 20px 10px !important;
+  }
 
-    /* 2. 네비바: 글자 크기 줄이고 스크롤 가능하게 */
-    .sub-nav ul { 
-        padding: 10px; 
-        overflow-x: auto; /* 메뉴가 많으면 옆으로 밀어서 보게 함 */
-        white-space: nowrap;
-        justify-content: flex-start;
-    }
-    .sub-nav li { margin: 0 10px; font-size: 14px; }
+  /* 2. 메인 텍스트 크기 조정 (여기가 포인트!) */
+  .hero-content h2 {
+    font-size: 1.2rem !important; /* 글자 크기 축소 */
+    line-height: 1.4;
+  }
 
-    /* 3. 브랜드 배너 (질문하신 부분) */
-    .brand-hero { 
-        height: 180px; /* 높이 축소 */
-        margin: 15px 10px; 
-        border-radius: 20px;
-    }
-    .hero-content h2 { 
-        font-size: 18px !important; /* 글자 크기 축소 */
-        padding: 0 20px;
-    }
+  /* 3. 사이드바와 콘텐츠를 가로가 아닌 세로로 배치 */
+  .main-layout {
+    flex-direction: column !important;
+  }
 
-    /* 4. 레이아웃: 가로 배치를 세로 배치로 변경 (가장 중요) */
-    .main-layout { 
-        flex-direction: column; 
-        gap: 20px; 
-        padding: 0 15px;
-    }
+  .side-menu {
+    width: 100% !important;
+    position: static !important; /* 고정 해제 */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 버튼 3개를 가로로 꽉 차게 */
+    gap: 5px;
+    margin-bottom: 20px;
+  }
 
-    /* 5. 사이드 메뉴: 가로로 나열하거나 숨김 */
-    .side-menu { 
-        width: 100%; 
-        position: static; 
-        flex-direction: row; 
-        overflow-x: auto; 
-        padding-bottom: 10px;
-    }
-    .menu-btn { 
-        flex: 0 0 auto; 
-        padding: 10px 15px; 
-        font-size: 13px; 
-    }
+  .menu-btn {
+    padding: 10px 5px !important;
+    font-size: 11px !important;
+    text-align: center !important;
+  }
 
-    /* 6. 상품 그리드: 한 줄에 하나씩 보이게 */
-    .product-grid { 
-        flex-direction: column; 
-    }
-    .product-card { 
-        width: 100%; 
-    }
-    .product-card img {
-        height: 250px;
-    }
-
-    /* 7. 푸터 조정 */
-    .footer-btns {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+  /* 4. 하자품 리스트 한 줄에 하나씩 */
+  .product-grid {
+    flex-direction: column !important;
+  }
+  
+  .product-card {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
 }
+
 
