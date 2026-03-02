@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elyn's Maid | Official Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <a href="index.html" class="logo-link">
+            <img src="./images/로고.png" alt="로고" class="logo">
+        </a>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="원하는 것을 검색하세요..." onkeyup="filterProducts()">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="icons">
+    <span class="icon cart-btn">🛒</span>
+    <span class="icon login-btn">👤</span>
+</div>
+    </header>
+
+
+    <section class="brand-hero">
+        <div class="hero-content">
+            <h2>ELYN'S MAID<br>모든 것을 하나의 인간으로.</h2>
+        </div>
+    </section>
+    <div class="main-layout">
+        <aside class="side-menu">
+            <button class="menu-btn" onclick="document.getElementById('new-section').scrollIntoView({behavior: 'smooth'})">신상입고 메이드 보러가기</button>
+            <button class="menu-btn" onclick="document.getElementById('custom-section').scrollIntoView({behavior: 'smooth'})">검수원 프로필</button>
+            <button class="menu-btn" onclick="document.getElementById('defect-section').scrollIntoView({behavior: 'smooth'})">예비 하자품 보기</button>
+        </aside>
+
+        <div class="content-area">
+            <section id="new-section" class="content-section">
+                <h2 class="section-title">✨ 신상입고 메이드</h2>
+                <div class="empty-box">업데이트 예정입니다.</div>
+            </section>
+
+            <section id="custom-section" class="content-section">
+                <h2 class="section-title">🛠️ 검수원 프로필</h2>
+                <div class="empty-box">
+                    <p>업데이트 예정입니다.</p>
+                </div>
+            </section>
+
+            <section id="defect-section" class="content-section">
+                <h2 class="section-title">⚠️ 예비 하자품 리스트</h2>
+                <div class="product-grid">
+                    <div class="product-card" onclick="location.href='dubu.html'">
+                        <div class="badge">하자품</div>
+                        <img src="./images/두부 프로필 사진.png" alt="두부">
+                        <div class="info"><h3>DUBU (DU-GO21)</h3><p class="price">Waiting for measurement</p></div>
+                    </div>
+                    <div class="product-card" onclick="location.href='coco.html'">
+                        <div class="badge">하자품</div>
+                        <img src="./images/코코 프로필 사진.png" alt="코코">
+                        <div class="info"><h3>COCO (CO-EW07)</h3><p class="price">Waiting for measurement</p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="cs-info" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: left;">
+            <h3 style="color: #333; margin-bottom: 10px;">고객센터 1577-ELYN (3596)</h3>
+            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">일반문의: 09:00~18:00 (평일) | 야간 긴급 교정 문의: 24시간 상시 대기</p>
+            <div class="footer-btns">
+  <button class="inquiry-btn" onclick="window.open('https://x.com/dyllonnne', '_blank')">
+    1:1 문의하기
+</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px; text-align: center;">
+        <p style="font-size: 13px; color: #888;"><strong>엘린의 메이드 주식회사</strong> | 대표이사: 엘린 | 사업자번호: 809-81-01574</p>
+        <p style="font-size: 12px; color: #aaa; margin-top: 5px;">Copyright © Elyn's Maid. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
