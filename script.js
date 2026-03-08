@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartBtn = document.querySelector('.cart-btn');
     if (cartBtn) {
         cartBtn.addEventListener('click', () => {
-            alert("아직 권한이 없습니다.");
+            alert("아직 예비 하자품만 조회 및 구매 가능합니다.");
         });
     }
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = document.querySelector('.login-btn');
     if (loginBtn) {
         loginBtn.addEventListener('click', () => {
-            alert("하층민에겐 열리지 않습니다.");
+            alert("이미 로그인 중입니다.");
         });
     }
 
@@ -44,4 +44,5 @@ function filterProducts() {
             card.style.display = textValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
         }
     });
+
 }
